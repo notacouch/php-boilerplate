@@ -5,7 +5,7 @@ function has_content($key) {
   return isset($content[$key]);
 }
 
-function yield($key = 'default', $echo = true) {
+function yield_content($key = 'default', $echo = true) {
   global $content;
 
   $out = has_content($key) ? $content[$key] : '';

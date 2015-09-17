@@ -5,12 +5,11 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title><?php echo has_content('title') ? yield('title', false) . ' - ' : ''; ?>[SITE NAME]</title>
+    <title><?php echo has_content('title') ? yield_content('title', false) . ' - ' : ''; ?>[SITE NAME]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="<?php echo $config['base_url']; ?>">
     <!--[if ! lte IE 6]><!-->
       <link rel="stylesheet" href="css/application.css">
-      <?php yield('stylesheets'); ?>
+      <?php yield_content('stylesheets'); ?>
     <!--<![endif]-->
     <!--[if lte IE 6]>
       <link rel="stylesheet" href="css/libs/ie6.1.1.css">
@@ -19,11 +18,11 @@
     <script src="js/libs/modernizr-2.7.0.min.js"></script>
   </head>
   <body>
-    <?php yield(); ?>
+    <?php yield_content(); ?>
 
     <!--[if ! lte IE 6]><!-->
       <script src="js/libs/jquery-1.10.2.min.js"></script>
-      <?php javascripts('script'); yield('javascripts'); ?>
+      <?php javascripts('script'); yield_content('javascripts'); ?>
     <!--<![endif]-->
 
     <?php if ($config['google_analytics_web_property_id'] != ''): ?>
